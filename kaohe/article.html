@@ -1,0 +1,562 @@
+
+    <style>
+        body{
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar {display:none}
+        .collapse{
+            background: #fff;
+        }
+        .breadcrumb{
+            background: #fff;
+        }
+
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        span{
+            width: 20px;
+            height: 20px;
+        }
+        .panel-group .panel + .panel{
+            margin: 0;
+            border: none;
+
+        }
+
+        .panel{
+            border: none;
+        }
+        .panel-default >.panel-heading:hover{
+            padding-left: 10px;
+        }
+        .panel-default >.panel-heading:hover {
+
+            border-left: 5px solid  #009688 ;
+            color: #fff;
+
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a:focus{
+            text-decoration: none;
+        }
+        .panel-default >.panel-heading{
+            height: 50px;
+            border-radius: unset;
+            background: #20222a;
+            color: #999;
+
+        }
+        .left-a{
+            font-size: 13px;
+        }
+        .left{
+
+            height:auto;
+            background: #20222a;
+            position: fixed;
+            bottom: 0;top: 0;
+            padding-left: 0px;
+            padding-right: 0px;
+
+        }
+        .top{
+
+            position: fixed;
+            z-index: 1040;
+        }
+        .nav-dh{
+            position: fixed;
+            top:55px;
+            width: 100%;
+            z-index: 1030;
+        }
+        h3{
+            width: 200px;
+            height: 50px;
+            color: #999;
+            font-size: 13px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 30px;
+        }
+        .index-son{
+            background: #000;
+            color: #999;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .index-son>p{
+            height: 30px;
+            line-height: 30px;
+
+        }
+        .index-son>p:hover{
+            background: #009688 ;
+
+
+        }
+        .index-son>p a{
+            color:#999;
+            margin-left: 48px;
+
+
+        }
+        #bs{
+            background: #009688 ;
+        }
+        #bs>a{
+            color:#fff;
+
+        }
+        .index-son>p a:hover{
+            color: #fff;
+        }
+        .sjx>.sj{
+            transform: rotate(180deg);
+        }
+
+        .row{
+            margin-left: 0px;
+            margin-right: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .navbar a>img{
+            width: 20px;
+            height: 20px;
+        }
+
+
+        .xian{
+            margin-left: 17px;
+            width: 0px;
+            border-top: solid 2px #000;
+            height: 0px;
+            display: block;
+        }
+
+
+
+
+        .containe{
+            height:570px;
+            background: #fff;
+            position: absolute;
+            top:106px;
+            border-left:10px solid #f1f1f1;
+            border-right:10px solid #f1f1f1;
+            overflow: hidden;
+
+
+
+
+        }
+
+
+        #xlk{
+            width: 150px;
+        }
+        .mg{
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .fr1{
+            border-bottom:1px solid  #f1f1f1;
+            height:auto;
+            padding-top: 20px;
+            padding-bottom: 60px;
+            margin-bottom: 10px;
+
+        }
+        .modal-header{
+            background: #000;
+            color: #fff;
+            margin-bottom: 10px;
+
+        }
+        .modal-title{
+            font-size: 14px;
+        }
+        .btn-primary{
+            height: 32px;
+            font-size: 14px;
+            line-height: 6px;
+        }
+        .close{
+            color: #fff;
+            opacity: 1;
+        }
+
+        .modal-content{
+            width: 500px;
+        }
+        .mid{
+
+        }
+        .form-horizontal .control-label{
+            text-align: center;
+        }
+        .mg1{
+            margin-bottom: 20px;
+        }
+        .gdt1 th:nth-of-type(1){
+            width: 40px;
+
+
+        }
+        .check{
+            width: 15px;
+            height: 15px;
+
+
+        }
+
+        .gdt1 th:nth-of-type(2){
+            width: 80px;
+            text-align: center;
+
+        }
+        .gdt1 th:nth-of-type(4){
+            width: 80px;
+        }
+        .gdt1 th:nth-of-type(7){
+            width: 80px;
+        }
+
+        .gdt1 th{
+            width: 140px;
+        }
+        .bj{
+            width: 50px;
+            height:20px;
+            font-size: 8px;
+            padding: 0px;
+            margin-right: 10px;
+            background-color: #FF5722;
+            border: none;
+        }
+  #gdt{
+      height:570px;
+      overflow-y: scroll;
+
+  }
+
+    </style>
+
+
+
+
+
+<div class="row col-xs-12 col-sm-12 col-md-10 col-md-push-2 nav-dh  ">
+    <ul class="breadcrumb">
+        <li><a href="#">主页</a></li>
+        <li><a href="#">应用</a></li>
+        <li class="active">文章列表</li>
+    </ul>
+</div>
+
+
+    <div class="row col-xs-12">
+        <form class="form-inline fr1" role="form">
+            <div class="form-group col-md-3">
+                <label class="sr-only" for="tagsid">名称</label>
+                文章ID:<input type="text" class="form-control mg" id="tagsid" placeholder="请输入">
+            </div>
+            <div class="form-group col-md-3">
+                <label class="sr-only" for="name">名称</label>
+                作者:<input type="text" class="form-control mg" id="name" placeholder="请输入">
+            </div>
+            <div class="form-group col-md-3">
+                <label class="sr-only" for="name">名称</label>
+                标题:<input type="text" class="form-control mg" id="name" placeholder="请输入">
+            </div>
+            <div class="form-group col-md-3" >
+                <label for="name" style="font-weight: normal" class="mg">文章标签</label>
+                <select class="form-control "id="xlk">
+                    <option>美食</option>
+                    <option>新闻</option>
+                    <option>八卦</option>
+                    <option>体育</option>
+                    <option>音乐</option>
+                </select>
+            </div>
+        </form>
+
+
+        <button class="btn btn-primary btn-lg mg1 mg" data-toggle="modal" data-target="#myModal1" style="background: #009688 ">删除</button>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button " class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel2">敏感操作</h4>
+                    </div>
+                    <form class="form-horizontal" role="form" action="sql/article2.php">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="yz" placeholder="请输入ID">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary" id="del" data-dismiss="modal">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg mg mg1" data-toggle="modal" data-target="#myModal" style="background: #009688 ">
+            添加
+        </button>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">×
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            添加文章
+                        </h4>
+                    </div>
+                    <div class="mid">
+                        <form class="form-horizontal" role="form" action="./sql/article1.php">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-3 control-label">文章标题</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="title" placeholder="请输入标题">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="author" class="col-sm-3 control-label">发布人</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" id="author" placeholder="请输入发布人">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="content" class="col-sm-3 control-label">文章类容</label>
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+
+                                        <textarea class="form-control" rows="3" id="content"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tags" class="col-sm-3 control-label">标签</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control "id="tags">
+                                        <option>美食</option>
+                                        <option>新闻</option>
+                                        <option>八卦</option>
+                                        <option>体育</option>
+                                        <option>音乐</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form-group" id="status" >
+                                <label class="col-sm-3 control-label">状态</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="已发布"> 已发布
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="待修改">待修改
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">关闭
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="background: #009688 " id="go" data-dismiss="modal">
+                            确定
+                        </button>
+                        <button type="submit" class="btn btn-primary" style="background: #009688 " id="go1" data-dismiss="modal">
+                            确定
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div id="gdt">
+             <table class="table table-hover table-bordered text-center gdt1" >
+
+                 <thead >
+                 <tr>
+                     <th class="text-center" ><input type="checkbox" class="check"></th>
+                     <th class="text-center">文章ID</th>
+                     <th class="text-center">文章标签</th>
+                     <th class="text-center">文章标题</th>
+                     <th class="text-center">作者</th>
+                     <th class="text-center">上传时间</th>
+                     <th class="text-center">发布状态</th>
+                     <th class="text-center">操作</th>
+                 </tr>
+
+                 </thead>
+
+
+                 <tbody class="gdt5">
+
+                 </tbody>
+
+             </table>
+         </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+<script>
+
+    $('.navbar a').mouseenter(function () {
+
+        $(this).prev().animate({
+            width:'15px',
+            height:'2px',
+
+        },200)
+    })
+    $('.navbar a').mouseleave(function () {
+
+        $(this).prev().animate({
+            width:'0px', height:'2px',
+
+        },200)
+
+    })
+
+
+    $.post('./sql/article.php',function(text){
+        var json;
+        if(typeof text === 'string'){
+            json = $.parseJSON(text);
+        }else if(typeof text === 'object'){
+            json = text;
+        }
+  $('.mg').click(function () {
+      $('#go1').css('display','none')
+  })
+
+    var date=new Date(+new Date() + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+    $('#go').click(function (e) {
+
+        e.preventDefault()
+        $.ajax({
+            type:"post",
+            url:"./sql/article1.php",
+            data:{
+                title:$('#title').val(),
+                content:$('#content').val(),
+                author:$('#author').val(),
+                time:date,
+                status:$('#status :checked').val(),
+                tags:$('#tags').val()
+
+            },
+            success:function (text,statys,xhr) {
+                var t = $.parseJSON(text);
+                alert(t.message)
+                if(t.message==="发布成功")
+                    $(".containe").load("article.html");
+            },
+            error:function (text,statys,xhr) {
+
+            }
+        })
+
+
+    })
+    $('#del').click(function (e) {
+        e.preventDefault()
+        $.ajax({
+            type:"post",
+            url:"./sql/article2.php",
+            data:{
+                ID:$('#yz').val(),
+            },
+            success:function (text,statys,xhr) {
+                var t = $.parseJSON(text);
+                alert(t.message)
+                if(t.message==="删除成功")
+                    $(".containe").load("article.html");
+            },
+            error:function (text,statys,xhr) {
+            }
+        })
+
+
+
+    })
+
+
+        $.each(json,function(index,value){
+            $('.gdt5').prepend('<tr><td class="text-center"><input type="checkbox"></td><td>'+value.id+'</td><td>'+value.tags+'</td><td>'+value.title+'</td><td>'+value.author+'</td><td>'+value.time+'</td><td>'+value.status+'</td><td><button type="button" class="btn btn-danger bj" id="bj" style="background-color: #1E9FFF" data-toggle="modal" data-target="#myModal" >编辑</button><button type="button" class="btn btn-danger bj " data-toggle="modal" data-target="#myModal1">删除</button></td></tr>')
+            $('#bj').click(function () {
+                $('#go').css('display','none')
+                var ID=$(this).parents("tr").children().eq(1).html()
+                if(ID==$(this).parents("tr").children().eq(1).html()){
+                    $('#title').val(value.title)
+                    $('#author').val(value.author)
+                    $('#content').html(value.content)
+                    $('#tags').val(value.tags)
+                    $('#go1').click(function (e) {
+                        e.preventDefault()
+                        $.ajax({
+                            type:"post",
+                            url:"./sql/article3.php",
+                            data:{
+                                title:$('#title').val(),
+                                content:$('#content').val(),
+                                author:$('#author').val(),
+                                time:date,
+                                status:$('#status :checked').val(),
+                                tags:$('#tags').val(),
+                                ID:ID
+                            },
+                            success:function (text,statys,xhr) {
+                                var t = $.parseJSON(text);
+                                alert(t.message)
+                                if(t.message==="修改成功")
+                                    $(".containe").load("article.html");
+                            },
+                            error:function (text,statys,xhr) {
+
+                            }
+                        })
+
+                    })
+
+
+
+
+                }
+            })
+        })
+    })
+
+
+
+
+</script>

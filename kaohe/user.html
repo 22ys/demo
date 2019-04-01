@@ -1,0 +1,608 @@
+
+<style>
+    body{
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar {display:none}
+    .collapse{
+        background: #fff;
+    }
+    .breadcrumb{
+        background: #fff;
+    }
+
+
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    span{
+        width: 20px;
+        height: 20px;
+    }
+    .panel-group .panel + .panel{
+        margin: 0;
+        border: none;
+
+    }
+
+    .panel{
+        border: none;
+    }
+    .panel-default >.panel-heading:hover{
+        padding-left: 10px;
+    }
+    .panel-default >.panel-heading:hover {
+
+        border-left: 5px solid  #009688 ;
+        color: #fff;
+
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    a:focus{
+        text-decoration: none;
+    }
+    .panel-default >.panel-heading{
+        height: 50px;
+        border-radius: unset;
+        background: #20222a;
+        color: #999;
+
+    }
+    .left-a{
+        font-size: 13px;
+    }
+    .left{
+
+        height:auto;
+        background: #20222a;
+        position: fixed;
+        bottom: 0;top: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+
+    }
+    .top{
+
+        position: fixed;
+        z-index: 1040;
+    }
+    .nav-dh{
+        position: fixed;
+        top:55px;
+        width: 100%;
+        z-index: 1030;
+    }
+    h3{
+        width: 200px;
+        height: 50px;
+        color: #999;
+        font-size: 13px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    .index-son{
+        background: #000;
+        color: #999;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 12px;
+        opacity: 0.9;
+    }
+    .index-son>p{
+        height: 30px;
+        line-height: 30px;
+
+    }
+    .index-son>p:hover{
+        background: #009688 ;
+
+
+    }
+    .index-son>p a{
+        color:#999;
+        margin-left: 48px;
+
+
+    }
+    .index-son>p a:hover{
+        color: #fff;
+    }
+    .sjx>.sj{
+        transform: rotate(180deg);
+    }
+
+    .row{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .navbar a>img{
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .xian{
+        margin-left: 17px;
+        width: 0px;
+        border-top: solid 2px #000;
+        height: 0px;
+        display: block;
+    }
+
+
+
+
+    .containe{
+        height:570px;
+        background: #fff;
+        position: absolute;
+        top:106px;
+        border-left:10px solid #f1f1f1;
+        border-right:10px solid #f1f1f1;
+        overflow: hidden;
+
+
+
+    }
+
+
+    #xlk{
+        width: 150px;
+    }
+    .mg{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .fr1{
+        border-bottom:1px solid  #f1f1f1;
+        height:auto;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        margin-bottom: 10px;
+
+    }
+    .modal-header{
+        background: #000;
+        color: #fff;
+        margin-bottom: 10px;
+
+    }
+    .modal-title{
+        font-size: 14px;
+    }
+    .btn-primary{
+        height: 32px;
+        font-size: 14px;
+        line-height: 6px;
+    }
+    .close{
+        color: #fff;
+        opacity: 1;
+    }
+
+    .modal-content{
+        width: 500px;
+    }
+    .mid{
+
+    }
+    .form-horizontal .control-label{
+        text-align: center;
+    }
+    .mg1{
+        margin-bottom: 20px;
+    }
+    .gdt1 th:nth-of-type(1){
+        width: 40px;
+
+
+    }
+    .check{
+        width: 15px;
+        height: 15px;
+
+
+    }
+
+    .gdt1 th:nth-of-type(2){
+        width: 80px;
+        text-align: center;
+
+    }
+    .gdt1 th:nth-of-type(4){
+        width: 80px;
+    }
+    .gdt1 th:nth-of-type(7){
+        width: 80px;
+    }
+
+    .gdt1 th{
+        width: 140px;
+    }
+    .bj{
+        width: 50px;
+        height:20px;
+        font-size: 8px;
+        padding: 0px;
+        margin-right: 10px;
+        background-color: #FF5722;
+        border: none;
+    }
+    #bs{
+        background: #009688 ;
+    }
+    #bs>a{
+        color:#fff;
+
+    }
+        .input-append>img{
+            width: 50px;
+            height: 50px;
+    }
+</style>
+
+
+
+
+
+
+<div class="row col-xs-12 col-sm-12 col-md-10 col-md-push-2 nav-dh  ">
+    <ul class="breadcrumb">
+        <li><a href="#">主页</a></li>
+        <li><a href="#">用户</a></li>
+        <li class="active">网站用户</li>
+    </ul>
+</div>
+
+
+<div class="row col-xs-12">
+    <form class="form-inline fr1" role="form">
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="name">名称</label>
+            ID:<input type="text" class="form-control mg" id="name" placeholder="请输入">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="name">名称</label>
+            用户名:<input type="text" class="form-control mg" id="name" placeholder="请输入">
+        </div>
+        <div class="form-group col-md-3">
+            <label class="sr-only" for="name">名称</label>
+            邮箱:<input type="text" class="form-control mg" id="name" placeholder="请输入">
+        </div>
+        <div class="form-group col-md-3" >
+            <label for="name" style="font-weight: normal" class="mg">性别</label>
+            <select class="form-control "id="xlk">
+                <option>男</option>
+                <option>女</option>
+                <option>其他</option>
+            </select>
+        </div>
+    </form>
+
+
+    <button class="btn btn-primary btn-lg mg1 mg" data-toggle="modal" data-target="#myModal1" style="background: #009688 ">删除</button>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button " class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel2">敏感操作</h4>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="yz" placeholder="请输入ID">
+                        </div>
+                    </div></form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="del" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg mg mg1" data-toggle="modal" data-target="#myModal" style="background: #009688 ">
+        添加
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        添加用户
+                    </h4>
+                </div>
+                <div class="mid">
+                    <form class="form-horizontal" role="form" action="./sql/user1.php">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-3 control-label">手机号码</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="phone" placeholder="请输入手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-3 control-label">邮箱</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">头像</label>
+                            <div class="col-sm-6">
+                                <input id="lefile" type="file" style="display:none">
+                                <div class="input-append">
+                                    <input id="headimg" class="input-large form-control" type="hidden" style="height:30px;" >
+                                    <img src="" alt="" width="100" height="100" id="img">
+                                </div>
+                            </div>
+                            <button for="Headimg" onclick="$('input[id=lefile]').click();"   type="button" class="btn btn-primary" style="background:#009688">
+                                上传图片
+                            </button>
+                            <script type="text/javascript">
+                                $('input[id=lefile]').change(function() {
+                                    $('#headimg').val($(this).val());
+                                });
+                            </script>
+                        </div>
+                        <div class="form-group" id="sex">
+                            <label  class="col-sm-3 control-label">性别</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="optionsRadiosinline"  value="男" >男
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="optionsRadiosinline"   value="女"> 女
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                            data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" style="background: #009688 " id="go" data-dismiss="modal">
+                        确定
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="background: #009688 " id="go1" data-dismiss="modal">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <table class="table table-hover table-bordered text-center gdt1" id="gdt">
+
+        <thead>
+        <tr>
+            <th class="text-center" ><input type="checkbox" class="check"></th>
+            <th class="text-center">ID</th>
+            <th class="text-center">用户名</th>
+            <th class="text-center">头像</th>
+            <th class="text-center">手机</th>
+            <th class="text-center">邮箱</th>
+            <th class="text-center">性别</th>
+            <th class="text-center">IP</th>
+            <th class="text-center">加入时间</th>
+            <th class="text-center">操作</th>
+        </tr>
+
+        </thead>
+        <tbody class="gdt5">
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+<script>
+    $("#lefile").on('change',function(){
+        getbase64();
+    })
+
+    function getbase64() {
+        var file = $('#lefile')[0].files[0];
+        reader = new FileReader();
+        reader.onload = function(){
+            var ImgFileSize = reader.result.substring(reader.result.indexOf(",") + 1)
+            $('#headimg').val(reader.result);
+            $('#img').attr('src',reader.result)
+
+        }
+        reader.readAsDataURL(file);
+    }
+
+    var reg = /^[a-zA-Z0-9_]{0,}$/;
+    var reg2 = /^[0-9]{0,}$/;
+    var reg1=/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+    var cn=/[\u4e00-\u9fa5]/;
+
+
+
+    $('.navbar a').mouseenter(function () {
+
+        $(this).prev().animate({
+            width:'15px',
+            height:'2px',
+
+        },200)
+
+    })
+    $('.navbar a').mouseleave(function () {
+
+        $(this).prev().animate({
+            width:'0px',
+            height:'2px',
+
+        },200)
+
+
+    })
+    $('.mg').click(function () {
+        $('#go1').css('display','none')
+    })
+
+    var date=new Date(+new Date() + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+    $('#go').click(function (e) {
+        console.log($('#headimg').val());
+        e.preventDefault()
+        if($('#phone')[0].value.match(reg2)&&$('#phone').val().length=='11'&&$('#email')[0].value.match(reg1)){
+            $.ajax({
+                type:"post",
+                url:"./sql/user1.php",
+                data:{
+                    username:$('#username').val(),
+                    phone:$('#phone').val(),
+                    email:$('#email').val(),
+                    time:date,
+                    sex:$('#sex :checked').val(),
+                    headimg:$('#headimg').val()
+
+                },
+                success:function (text,statys,xhr) {
+                    var t = $.parseJSON(text);
+                    alert(t.message)
+                    $(".containe").load("user.html");
+                },
+                error:function (text,statys,xhr) {
+
+                }
+            })
+        }else if($('#phone').val()==''){
+            alert('手机号不能为空')
+        }else if($('#email').val()==''){
+            alert('邮箱不能为空')
+        }else if ($('#email')[0].value.match(reg)||$('#email')[0].value.match(cn)){
+            alert('邮箱格式有误')
+        }else if ($('#phone').val().length!='11'||$('#phone')[0].value.match(reg)||$('#phone')[0].value.match(cn)){
+            alert('手机号格式有误')
+
+        }
+
+
+
+    })
+    $.post('./sql/user.php',function(text){
+        var json;
+        if(typeof text === 'string'){
+            json = $.parseJSON(text);
+        }else if(typeof text === 'object'){
+            json = text;
+        }
+        $.each(json,function(index,value){
+            $('.gdt5').prepend('<tr><td class="text-center"><input type="checkbox"></td>+<td>'+value.id+'</td>+<td>'+value.username+'</td>+<td>'+'<img src=sql/'+value.headimg+'>'+'</td>+<td>'+value.phone+'</td>+<td>'+value.email+'</td>+<td>'+value.sex+'</td>+<td>Mumbai</td>+<td>'+value.time+'</td>+<td><button type="button" class="btn btn-danger bj " style="background-color: #1E9FFF" data-toggle="modal" data-target="#myModal" id="bj">编辑</button><button type="button" class="btn btn-danger bj" data-toggle="modal" data-target="#myModal1">删除</button></td></tr>')
+            $('#bj').click(function () {
+                $('#go').css('display','none')
+                var ID=$(this).parents("tr").children().eq(1).html()
+                if(ID==$(this).parents("tr").children().eq(1).html()){
+                    $('#username').val(value.username)
+                    $('#phone').val(value.phone)
+                    $('#email').val(value.email)
+                    $('#img').attr('src','sql/'+value.headimg)
+                    $('#go1').click(function (e) {
+                        e.preventDefault()
+                        if($('#phone')[0].value.match(reg2)&&$('#phone').val().length=='11'&&$('#email')[0].value.match(reg1)){
+                            $.ajax({
+                                type:"post",
+                                url:"./sql/user3.php",
+                                data:{
+                                    username:$('#username').val(),
+                                    phone:$('#phone').val(),
+                                    email:$('#email').val(),
+                                    time:date,
+                                    sex:$('#sex :checked').val(),
+                                    ID:ID,
+                                    headimg:$('#headimg').val()
+                                },
+                                success:function (text,statys,xhr) {
+                                    var t = $.parseJSON(text);
+                                    alert(t.message)
+                                    if(t.message==="修改成功")
+                                             $(".containe").load("user.html");
+                        },
+                        error:function (text,statys,xhr) {
+
+                    }
+                })
+        }else if($('#phone').val()==''){
+            alert('手机号不能为空')
+        }else if($('#email').val()==''){
+            alert('邮箱不能为空')
+        }else if ($('#email')[0].value.match(reg)||$('#email')[0].value.match(cn)){
+            alert('邮箱格式有误')
+        }else if ($('#phone').val().length!='11'||$('#phone')[0].value.match(reg)||$('#phone')[0].value.match(cn)){
+            alert('手机号格式有误')
+
+        }
+
+
+
+    })
+
+
+
+
+                }
+            })
+
+        })
+    })
+
+    $('#del').click(function (e) {
+        e.preventDefault()
+        $.ajax({
+            type:"post",
+            url:"./sql/user2.php",
+            data:{
+                ID:$('#yz').val(),
+            },
+            success:function (text,statys,xhr) {
+                var t = $.parseJSON(text);
+                alert(t.message)
+                if(t.message==="删除成功")
+                    $(".containe").load("user.html");
+            },
+            error:function (text,statys,xhr) {
+            }
+        })
+
+
+
+
+
+
+
+
+
+    })
+
+
+</script>
+
+
+
+
