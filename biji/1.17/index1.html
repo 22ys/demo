@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<style type="text/css" media="screen">
+		 body,ul,li,input{
+		 	margin: 0;
+		 	padding: 0;
+		 	list-style: none;
+		 }
+
+   #ul1{
+   	width: 1000px;
+   	height: 500px;
+   	margin: 0 auto;
+   	display: flex;
+   	justify-content: space-between;
+   	flex-wrap: wrap;
+   }
+ input{
+  	width: 70px;
+  	height: 30px;
+
+  }
+  .bs{
+  	color: #a66;
+  	background:#fa4;
+  	border:none;
+  }
+  
+  li{
+  	width: 100%;
+  	height: 100%; 
+  	display: none; 	
+      }
+   img{
+      	width: 1000px;
+      	height: 500px;
+      }
+  
+	</style>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<ul id="ul1">
+		 <input type="button" value="科比"  class="bs" />
+         <input type="button" value="乔丹" />
+         <input type="button" value="麦迪" />
+         <input type="button" value="艾弗森"   />
+         <input type="button" value="詹姆斯" />
+         <input type="button" value="库里" />
+		<li style="display: block;"><img src="下载.jpg" alt=""></li>
+		<li><img src="乔丹.jpg" alt=""></li>
+        <li><img src="麦迪.jpg" alt=""></li>
+        <li ><img src="艾弗森.jpg" alt=""></li>
+		<li><img src="king.jpg" alt=""></li>
+        <li><img src="库里.jpg" alt=""></li>
+
+	</ul>
+</body>
+
+
+  <script  type="text/javascript" charset="utf-8" async defer>
+	   	
+      window.onload=function(){
+        var oUl=document.getElementById("ul1"),
+            oIp=document.getElementsByTagName("input"),
+            oLi=document.getElementsByTagName("li");        
+           for(var i=0; i<oIp.length; i++){
+                (function(n){
+                oIp[n].onmouseover=function(){
+                 for(var  j=0; j<oIp.length; j++){
+                   oIp[j].className=' ';
+                   oLi[j].style.display ='none'; 
+                }    
+                   this.className='bs';
+                   oLi[n].style.display ='block';                  
+                }
+                }(i))    
+              
+         }  
+
+
+          
+
+                        
+      }
+
+	   </script>
+</html>

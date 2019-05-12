@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <input type="text" id="num">
+     <input type="text" id="num1">
+   <button id="plus">+</button>
+   <button id="minus">-</button>
+   <button id="ride">x</button>
+   <button id="divide">/</button>
+  <div id="abc"></div>
+</body>
+<script  type="text/javascript" charset="utf-8" async defer>
+	  
+    window.onload=function(){
+       var num=document.getElementById("num");
+       var num1=document.getElementById("num1");            
+       var plus=document.getElementById("plus");     
+       var minus=document.getElementById("minus");
+       var ride=document.getElementById("ride");
+       var divide=document.getElementById("divide");
+       var abc= document.getElementById("abc");
+
+         plus.onclick=function(){        
+             abc.innerHTML= +num.value + +num1.value;         
+       }
+         minus.onclick=function(){      
+             abc.innerHTML=num.value-num1.value;
+       }
+         ride.onclick=function(){       	
+             abc.innerHTML=num.value*num1.value;
+       }
+         divide.onclick=function(){      	
+             abc.innerHTML=num.value/num1.value;
+       }
+
+
+         
+    
+         
+
+
+
+
+
+
+    }
+
+
+</script>
+</html>

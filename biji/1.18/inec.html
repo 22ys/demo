@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="indxe.css">
+</head>
+<body>
+   <div id="content">
+   	  <div id="header"></div>
+   	  <div id="left">
+   	   <h2 ></h2>
+       <h2></h2>
+       <h2></h2>
+       <h2></h2>
+   	  </div>
+   	  <div id="right">
+   	  	<div style="display: flex;">	  		
+   	  	 <ul>   
+        </ul>
+         <ul>
+        </ul> 
+         <ul>        
+        </ul> 
+         <ul>             
+        </ul> 
+   	  	</div>
+   	  	<div >
+   	    <ul>              
+        </ul>
+         <ul>                 
+        </ul> 
+        <ul>         
+        </ul> 
+        <ul>               
+        </ul> 
+   	  	</div>
+        <div >
+        <ul>                
+        </ul>
+        <ul>                
+        </ul> 
+        <ul>                  
+        </ul> 
+        <ul>                
+        </ul>  
+        </div>
+   	  	<div >
+   	   <ul>              
+        </ul>
+        <ul>        
+        </ul> 
+        <ul>         
+        </ul> 
+        <ul>        
+        </ul>   
+   	  	</div>   	  	
+   	  </div>
+   </div>
+</body>
+<script  type="text/javascript" charset="utf-8" async defer>
+	window.onload=function(){
+       var oHerder=document.getElementById("header"),
+           oH2=document.getElementsByTagName("h2"), 
+           oRight=document.getElementById("right"),
+           oDiv=oRight.getElementsByTagName("div"),
+           oUl= oRight.getElementsByTagName("ul"); 
+         
+       var ts='{"name":"1203图书馆"}'
+       var ts_js=eval("("+ts+")");                                 
+       oHerder.innerHTML=ts_js.name; 
+
+      var shuming='{"s":[{"name":"天蚕土豆"},{"name":"辰东"},{"name":"唐家三少"},{"name":"骷髅精灵"}]}';
+       var shuming_js=eval("("+shuming+")");                  
+           for(var k=0 ;k<oH2.length;k++){
+           oH2[k].innerHTML=shuming_js.s[k].name;
+                 }
+         
+
+        
+      
+       var dpcq='{"b":[{"name":"书名："+"斗破苍穹","src":"1","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"武动乾坤","src":"4","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"cd","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"dldl","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"dldl","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"3","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"1","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"3","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"2","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"1","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"1","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"1","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"4","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"2","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"zt","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"},{"name":"书名："+"斗破苍穹","src":"ss","zz":"作者："+"天蚕土豆","jg":"价格："+"14000"}]}'; 
+          
+           var dpcq_js=eval("("+dpcq+")");                
+               for(var j=0; j<dpcq_js.b.length; j++){
+           	    oUl[j].innerHTML="<li>"+"<p>"+dpcq_js.b[j].name+"</p>"+"<p>"+dpcq_js.b[j].zz+"</p>"+"<p>"+dpcq_js.b[j].jg+"</p>" +"</ li>"+"<li>"+"<img src="+dpcq_js.b[j].src+".jpg>"+"</li>"
+            }
+
+
+  for(var k=0 ;k<oH2.length;k++){
+                 oH2[k].index=k;
+                 oH2[k].onclick=function(){
+            for(var s=0 ;s<oH2.length;s++){
+                 oH2[s].className=" ";
+                 oDiv[s].style.display ='none';                      
+             }
+                 this.className="bs";
+                 oDiv[this.index].style.display ='flex';                
+           }             
+          }                                                                                                 
+            } 
+          
+   
+          
+	
+
+
+
+
+
+                 
+
+
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="qingchumoren.css">
+	<link rel="stylesheet" href="index1.css">
+</head>
+<body>
+	<div id="cont">
+	<p></p>
+	<div>
+	<input type="text" name="" id="inp1"> 时
+	 <input type="text" name="" id="inp2">分
+	 <input type="text" name="" id="inp3">秒
+	</div>
+	<button type="" >关闭</button>
+		
+	</div>
+</body>
+<script  type="text/javascript" charset="utf-8" async defer>
+	
+	var cont=document.getElementById("cont"),
+	    p=cont.getElementsByTagName("p")[0];
+	var inp1=document.getElementById("inp1"),
+	    inp2=document.getElementById("inp2"),
+	    inp3=document.getElementById("inp3"),
+	    but=cont.getElementsByTagName("button")[0];
+        var b= document.getElementsByTagName("audio")[0];
+	    function time(){     
+          var sj=new Date();
+          console.log(sj.getHours())
+     //      var hours= sj.getHours();
+     //      var minutes=sj.getMinutes();
+     //      var seconds=sj.getSeconds();
+     //      p.innerHTML="现在的时间是："+hours+" "+"时"+minutes+" "+"分"+seconds+"秒";
+     //      if(hours==inp1.value&&minutes==inp2.value&&seconds==inp3.value){
+     //           b.play();
+     //      }        
+
+	    // } 
+	    // setInterval("time()",0)  
+  
+     //    but.onclick=function(){
+     //       b.pause();
+       }
+</script>
+</html>

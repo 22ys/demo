@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="a">
+    <div class="zh"><p>账号：</p><input type="text" id="input1" placeholder="请输入账号"><span id="span1"></span>
+    <div class="abcd"><p>密码：</p><input type="password" id="input2" placeholder="请输入密码" onkeyup="abcd()">
+        
+      <div id="j"></div>
+      <div id="k"></div>
+      <div id="l"></div>
+    </div>
+    <p>确认密码：</p><input type="password" id="input3" placeholder="请确认密码"><span id="span2"></span>
+          </div>
+
+      <div class="yzm"><p>验证码：</p><input type="text" id="input4" placeholder="请输入验证码"><p class="right"></p><button type="" id="but1">看不清</button>  </div>
+      <div class="zc"><button  id="but2">注册</button>
+        <button  id="but3">重置</button></div>
+  </div>
+</body>
+<script type="text/javascript" charset="utf-8" async defer>
+
+  var zh=document.getElementsByClassName("zh"),
+      input1=document.getElementById("input1"),
+      input2=document.getElementById("input2"),
+      input3=document.getElementById("input3"),
+      input4=document.getElementById("input4"),
+      right=document.getElementsByClassName("right")[0],
+      but1=document.getElementById("but1"),
+      but2=document.getElementById("but2"),
+      but3=document.getElementById("but3"),
+      span1=document.getElementById("span1"),
+      span2=document.getElementById("span2"),
+       v1=document.getElementById("j"),
+       v2=document.getElementById("k"),
+       v3=document.getElementById("l");
+      
+      
+              
+           var abc= function(){                 
+             var str="AbCDefGHijKLMNOPQRsTUVwXYz0123456789";
+             var strYzm="";
+             for(var i=1;i<=4;i++){
+                 var position=Math.floor(Math.random()*100)%36;
+                 strYzm=strYzm+str.substring(position,position+1);
+             }
+                    right.innerHTML=strYzm;  
+                      but2.onclick=function(){
+                 if(6<=input1.value.length&&input1.value.length<=12&&6<=input2.value.length&&input2.value.length<=16&&input2.value==input3.value&&input4.value==strYzm){
+                   span1.innerHTML=""
+                   span2.innerHTML=""
+                  window.open("http://www.baidu.com");                  
+                 }else if(6>input1.value.length||input1.value.length>12){
+                    span1.innerHTML="账号不能小于6位大于12位"
+                 }else if(6>input2.value.length||input2.value.length>16){
+                  alert("密码不能小于6位大于16位");
+                 }else if(input2.value!=input3.value&&input4.value!=strYzm){
+                  alert("请再次确认密码与验证码");
+                  }
+                  else if(input2.value!=input3.value){
+                 span2.innerHTML="请再次确认密码"
+                 }else if(input4.value!=strYzm){
+                  alert("验证码不正确");
+                 }
+                  
+           
+         }
+                     
+             };
+              abc();               
+            but1.onclick=function(){
+                abc();
+            }
+            but3.onclick=function(){
+                abc();
+                input1.value=""
+                input2.value=""
+                input3.value=""
+                input4.value=""
+                v1.style.borderTopColor="#999";
+                v2.style.borderTopColor="#999";
+                v3.style.borderTopColor="#999"; 
+
+            }
+            var reg=/^[0-9]{6,16}$|^[a-zA-Z]{6,16}$/; //全是数字或全是字母 6-16个字符
+            var reg1=/^[A-Za-z0-9]{6,16}$/; //数字、26个英文字母 6-16个字符
+            var reg2=/^\w{6,16}$/;  // 由数字、26个英文字母或者下划线组成的字符串 
+             
+  var abcd=function (){
+  
+       if(input2.value.match(reg)){
+      v1.style.borderTopColor="red";
+      v2.style.borderTopColor="#999";
+      v3.style.borderTopColor="#999"; 
+   
+      }else if(input2.value.match(reg1)){
+      v1.style.borderTopColor="red";
+      v2.style.borderTopColor="yellow";
+      v3.style.borderTopColor="#999";  
+   
+      }else if(input2.value.match(reg2)){
+      v1.style.borderTopColor="red";
+      v2.style.borderTopColor="yellow";
+      v3.style.borderTopColor="green"; 
+   }else{
+      v1.style.borderTopColor="#999";
+      v2.style.borderTopColor="#999";
+      v3.style.borderTopColor="#999"; 
+   }
+  
+  
+}
+        
+            
+             
+           
+
+       
+
+        
+
+</script>
+</html>

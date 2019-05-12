@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#div1 input{background:#fff;}
+
+			#div1 input.active{background:#ff0;}
+
+			#div1 li{width:200px;height:200px; background: #ccc; display: none;}
+		</style>
+		
+		<script type="text/javascript">
+		     window.onload=function(){
+		     	var oDiv=document.getElementById("div1");
+		     	var aBtn=oDiv.getElementsByTagName("input");
+		     	var aDiv=oDiv.getElementsByTagName("li");
+		     	for(var i=0;i<aBtn.length;i++){
+		     		aBtn[i].index=i;
+
+		     		aBtn[i].onclick=function(){
+		     			for(var i=0;i<aBtn.length;i++){
+		     			
+		     			aDiv[i].style.display="none";
+		     			}
+
+		     			
+		     			aDiv[this.index].style.display="block";
+		     		}
+		     	}
+		     }
+        </script>
+	</head>
+	<body>
+        <ul id="div1">
+           <input type="button" value="aaa" />
+           <input type="button" value="bbb" />
+           <input type="button" value="ccc" />
+           getElementsByTagName
+
+        <li style="display: block;">项目一</li>
+        <li>项目二</li>
+        <li>项目三</li>
+       </ul>
+        
+	</body>
+	   
+	 
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+	</title>
+	<style type="text/css" media="screen">
+	 body,input,button,p,div{
+	 	margin:0;
+	 	padding:0;
+	 }
+     input{
+     	width: 400px;
+     	height: 20px;
+     }
+   button{
+   	margin-left: 10px;
+   }
+   p{
+   	border: solid 1px #000;
+   	margin-top: 3px;
+   }
+   #div{
+   	margin-top: 5px;
+   	width: 700px;
+   	height: 320px;
+
+   }
+   div{
+   	width: 700px;
+   align-items: center;
+   }
+  button{
+  	height: 25px;
+  }
+
+	</style>
+
+</head>
+<body>
+
+<input type="text" id="inp1"><button id="but1">提交</button>
+<div id="div" >
+
+
+
+</div>
+<script  type="text/javascript" charset="utf-8" async defer>
+	var but1=document.getElementById("but1");
+	var inp1=document.getElementById("inp1");
+	var div1=document.getElementById("div");
+  var a=[];
+	     but1.addEventListener("click",function(){
+       var div2=document.createElement("div");
+       var inp2=document.createElement("input");
+       var but2=document.createElement("button");
+       var but3=document.createElement("button");
+       var but4=document.createElement("button");
+       var but5=document.createElement("button");
+       div2.style.display = 'flex';
+       div2.style.height = "30px";
+       but2.innerHTML="删除";
+       but3.innerHTML="修改";
+       but4.innerHTML="向上";
+       but5.innerHTML="向下";
+       inp2.value=inp1.value;
+       div2.appendChild(inp2);
+       div1.appendChild(div2);
+       a.push(div2);
+       div2.appendChild(but2);
+       div2.appendChild(but3);
+       div2.appendChild(but4);
+       div2.appendChild(but5);
+      but2.addEventListener("click",function(){
+
+      },false)
+
+      but3.addEventListener("click",function(){
+         inp2.value=""
+      },false)
+       but4.addEventListener("click",function(){
+        var c=div1.children[0];
+        div1.appendChild(c);
+      },false)
+
+      var b=a.length1-1;
+      but5.addEventListener("click",function(){
+
+       var c=div1.children[b];
+       div1.appendChild(c);
+
+
+      },false)
+
+
+
+
+
+      },false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+
+</html>

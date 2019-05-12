@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+/*	@keyframes sc{
+  0%{ 
+      transform:translate(150px)
+
+
+  }
+
+
+  25%{
+      transform: scale(1.1);
+     }
+      
+
+}
+	*/	img{
+			animation: sc 1.5s infinite alternate;
+			width: 500px;
+			height: 300px;
+			
+		}
+		div{
+			width: 500px;
+			margin: 0 auto;
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body>
+
+	<button type="">换图片</button>
+	<div>
+		
+	</div>
+</body>
+      <script  type="text/javascript" charset="utf-8" async defer>
+      	var div=document.getElementsByTagName("div")[0];
+      	var but=document.getElementsByTagName("button")[0];
+      	var i=0;
+        var a=[1,2,3,4] ;       
+      	 function time (){                      
+      	 div.innerHTML="<img src="+a[i]+".jpg>"
+      	 	i++
+      	 	if(i==4){
+      	 	   i=0;           
+      	 	  }
+		  } 
+		  time ();
+    setInterval("time()",1500)
+
+          
+ 
+         but.onclick= function(){                      
+      	 div.innerHTML="<img src="+a[i]+".jpg>"
+      	
+      	 	i++;
+      	 	if(i==4){
+      	 	   i=0;        
+      	 	  }
+           
+		  } 
+		
+		 
+       
+      	        
+      </script>
+      	
+</html>
