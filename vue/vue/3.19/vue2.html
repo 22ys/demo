@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+<abc></abc>
+</div>
+<script>
+
+
+
+Vue.component('aaa',{
+template:`
+<div>{{user}}
+<p v-for="(i,index) in arr " :key="index">{{i}}</p>
+</div>
+`,data(){
+
+   return{
+       user:'aaa',
+       arr:[
+           s:{
+            wll
+           },
+           naa{
+            4234
+           }
+       ]
+   }
+   }
+
+
+})
+new Vue({
+    el:'#app',
+    data:{
+
+    },
+    components:{
+       abc:{
+           data(){
+           return{
+               user:'abcd'
+           }
+        },
+       methods:{
+               fn(){
+                   this.user="yyyy"
+               }
+       },
+       template:`
+       <div>
+       {{user}}
+       <button @click="fn">ddd</button>
+</div>
+       `
+
+       }
+
+    }
+})
+</script>
+
+</body>
+</html>

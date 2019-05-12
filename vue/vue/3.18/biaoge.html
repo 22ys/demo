@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Page Description">
+    <meta name="author" content="Administrator">
+    <title>Page Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="../../../ajax/kaohe/bootstrap/bootstrap.css">
+    <script src="../../../ajax/kaohe/bootstrap/jquery.js"></script>
+    <script src="../../../ajax/kaohe/bootstrap/bootstrap.js"></script>
+
+
+
+</head>
+<body>
+<div class="container" id="app">
+
+    <h1 class="page-header text-center">用户信息列表</h1>
+    <form class="form col-md-4 col-md-offset-4" >
+        <div class="form-group">
+            <label for="">姓名</label>
+            <input type="text" class="form-control" v-model="firstname">
+        </div>
+        <div class="form-group">
+            <label for="">职业</label>
+            <input type="text" class="form-control" v-model="job">
+        </div>
+        <div class="form-group">
+            <label for="">年龄</label>
+            <input type="text" class="form-control" v-model="age">
+        </div>
+        <button type="button" v-on:click="addUser" class="btn btn-success">添加</button>
+        <button type="button"   class="btn btn-success" data-toggle="modal" data-target="#myModal1" v-show="user.length?true:false">删除所有</button>
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">删除所有</h4>
+                    </div>
+                    <div class="modal-body">在这里添加一些文本</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" @click="delAll" data-dismiss="modal" aria-hidden="true">提交更改</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">删除这条数据</h4>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" @click="del">提交更改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <table class="table table-striped">
+        <caption>条纹表格布局</caption>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>职业</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item,index) in user">
+            <td>{{index+1}}</td>
+            <td>{{item.firstname}}</td>
+            <td>{{item.job}}</td>
+            <td>{{item.age}}</td>
+            <td><button type="button" v-on:click="myindex=index" class="btn btn-danger" data-toggle="modal" data-target="#myModal">删除</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            firstname:'',
+            job:'',
+            age:'',
+            user:[],
+            zc:'',
+            myindex:''
+        },
+        methods:{
+            addUser(){
+              this.user.push({
+                  firstname:this.firstname,
+                  job:this.job,
+                  age:this.age
+              })
+            },
+            del(){
+                this.user.splice(this.myindex,1)
+            },
+            delAll(){
+                this.user=[]
+            }
+
+        }
+
+
+
+    })
+</script>
+
+</body>
+</html>

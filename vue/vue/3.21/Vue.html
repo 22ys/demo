@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../Vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #demo{
+            width: 340px;
+            height: 160px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px auto;
+        }
+        #demo div{
+            width: 80%;
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #demo  span{
+            display: flex;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            width: 100%;
+            height: 15px;
+            font-size: 12px;
+            color: red;
+        }
+        button{
+            width: 60px;
+            height: 25px;
+        }
+        input{
+            width: 190px;
+            outline:none;
+            border: 1px solid #999;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="demo">
+    <div>
+    用户名<input type="text" v-model="name" :style="cccc">
+    </div>
+    <span>{{c}}</span>
+    <p :style="cc">{{name1}}</p>
+    <div>
+        密码<input type="text" v-model="password" :style="aaaa">
+    </div><span>{{a}}</span>
+    <p :style="aa">{{password1}}</p>
+<div>
+    邮箱 <input type="text" v-model="msg" :style="bbbb">
+</div><span >{{b}}</span >
+    <p :style="bb">{{email}}</p>
+<button  @click="fn" type="button" :disabled="bbb">登录</button>
+
+</div>
+
+<script>var vm = new Vue({
+    el: '#demo',
+    data: {
+       msg:'',
+       name:'',
+       password:'',
+       a:'',
+       b:'',
+       c:'',
+       bbb:true,
+        aa:'',
+        bb:'',
+        cc:',',
+        aaaa:'',
+        bbbb:'',
+        cccc:""
+
+    },
+    computed:{
+       email:function () {
+           reg = /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
+           if(this.msg=='' ){
+               return ''
+           }else  if(!reg.test(this.msg)){
+               this.b='×'
+               this.bbb=true
+               this.bbbb=""
+               this.bb=""
+               return '邮箱格式有误'
+           }else {
+               this.b='√'
+               this.bb="color:#2FB9FF"
+               this.bbbb="border:yellow 1px solid"
+               return '邮箱格式正确'
+           }
+
+       },
+        password1:function () {
+           var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+           if(this.password=='' ){
+               return ''
+           }else  if(!reg.test(this.password)){
+               this.a='×'
+               this.bbb=true
+               this.aaaa=""
+               this.aa=""
+               return '密码格式有误'
+           }else {
+               this.a='√'
+               this.aa="color:#2FB9FF"
+               this.aaaa="border:yellow 1px solid"
+               return '密码正确'
+           }
+
+       },
+        name1:function () {
+            var reg = /^[a-zA-Z0-9_-]{4,16}$/;
+            if(this.name=='' ){
+                return ''
+            }else  if(!reg.test(this.name)){
+                this.c='×'
+                this.bbb=true
+                this.cccc=""
+                this.cc=""
+                return '用户名格式有误'
+            }else {
+                this.c='√'
+                if(this.c=='√'&&this.a=='√'&&this.b=='√'){
+                   this.bbb=false
+                }
+                this.cccc="border:yellow 1px solid"
+                this.cc="color:#2FB9FF"
+                return '用户名正确'
+            }
+
+        }
+
+
+
+    },
+    methods:{
+         fn(){
+             alert('登录成功')
+         }
+    }
+
+})
+
+</script>
+
+</body>
+
+</html>

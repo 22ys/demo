@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        .a{
+            border: 1px solid #000;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            margin: 40px auto;
+        }
+        .b{
+            width: 1800px;
+            height: 200px;
+            /*position: absolute;*/
+
+        }
+        .b>li{
+            list-style: none;
+            float: left;
+        }
+        .b>li>img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="a">
+    <ul class="b">
+        <li><img src="a.jpg"/></li>
+        <li><img src="b.jpg"/></li>
+        <li><img src="c.jpg"/></li>
+        <li><img src="d.jpg"/></li>
+        <li><img src="a.jpg"/></li>
+
+    </ul>
+</div>
+
+</body>
+<script>
+    var mai=0;
+    setInterval(function(){
+        mai+=-1;
+        $('ul').css('marginLeft',mai)
+        if(mai<=-1200){
+            mai=0;
+        }
+      },5)
+</script>
+</html>

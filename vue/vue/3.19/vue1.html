@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+<aaa></aaa>
+</div>
+<script>
+
+
+
+Vue.component('aaa',{
+template:`
+<div>
+<p v-for="(i,index) in arr ":key="index">{{i}}</p>
+</div>
+`,data(){
+
+    return{
+   
+        arr:[bbbb:{
+            aaaa:1212,
+            aaaa:121212,
+            aaaa:4545
+        },
+        bbbb:{
+            aaaa:1212,
+            aaaa:121212,
+            aaaa:4545
+        }
+
+            
+        ]
+    }
+    }
+
+
+})
+new Vue({
+    el:'#app'
+})
+</script>
+
+</body>
+</html>

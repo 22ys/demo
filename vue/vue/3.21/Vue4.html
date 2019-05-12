@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="../Vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 340px;
+            height: 160px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px auto;
+        }
+        #app div{
+            width: 80%;
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #app  span{
+            display: flex;
+            width: 20px;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            width: 100%;
+            height: 15px;
+            font-size: 12px;
+            color: red;
+        }
+        button{
+            width: 60px;
+            height: 25px;
+
+        }
+        input{
+            width: 190px;
+            outline:none;
+            border: 1px solid #999;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="app">
+    <div>
+        用户名<input type="text" v-model="name1" :style="cccc">
+    </div>
+    <span>{{c}}</span>
+    <p :style="cc">{{name}}</p>
+    <div>
+        密码<input type="text" v-model="password1" :style="aaaa">
+    </div><span>{{a}}</span>
+    <p :style="aa">{{password}}</p>
+    <div>
+        邮箱 <input type="text" v-model="email1" :style="bbbb">
+    </div><span >{{b}}</span >
+    <p :style="bb">{{email}}</p>
+    <button  @click="fn" type="button" :disabled="bbb">登录</button>
+
+</div>
+<script>
+     new Vue({
+        el:"#app",
+        data:{
+            name1:'',
+            name:'',
+            c:'',
+            a:'',
+            b:'',
+            bbb:true,
+            password1:'',
+            email1:'',
+            password:'',
+            email:'',
+            aa:'',
+            bb:'',
+            cc:',',
+            aaaa:'',
+            bbbb:'',
+            cccc:""
+
+
+
+
+        },
+        watch:{
+            name1:function(val){
+            this.nameq()
+
+            },
+            password1:function (val) {
+                this.passwordq()
+            },
+            email1:function (val) {
+                this.emailq()
+            }
+
+
+        },
+        methods:{
+             nameq(){
+                 var reg = /^[a-zA-Z0-9_-]{4,16}$/;
+                 if(this.name1=='' ){
+
+                     this.name=''
+                     this.bbb=true
+                 }else  if(!reg.test(this.name1)){
+                     this.c='×'
+                     this.cccc=""
+                     this.cc=""
+                     this.name= '用户名格式有误'
+                 }else {
+                     this.c='√'
+                     this.name= '用户名正确'
+                     this.cccc="border:yellow 1px solid"
+                     this.cc="color:#2FB9FF"
+                 }
+
+             },
+            emailq() {
+                reg = /^\w+((.\w+)|(-\w+))@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+).[A-Za-z0-9]+$/;
+                if(this.email1=='' ){
+                    this.email=''
+                }else  if(!reg.test(this.email1)){
+                    this.b='×'
+                    this.bbb=true
+                    this.bb=""
+                    this.bbbb=""
+                    this.email='邮箱格式有误'
+                }else {
+                    this.b='√'
+                    this.email= '邮箱格式正确'
+                    this.bb="color:#2FB9FF"
+                    this.bbbb="border:yellow 1px solid"
+                    if(this.c=='√'&&this.a=='√'&&this.b=='√'){
+                        this.bbb=false
+                    }
+
+                }
+
+            },
+            passwordq:function () {
+                var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+                if(this.password1=='' ){
+                    this.password= ''
+
+                }else  if(!reg.test(this.password1)){
+                    this.a='×'
+                    this.bbb=true
+                    this.aa=""
+                    this.aaaa=""
+                    this.password= '密码格式有误'
+                }else {
+                    this.a='√'
+                    this.aaaa="border:yellow 1px solid"
+                    this.aa="color:#2FB9FF"
+                    this.password= '密码正确'
+
+                }
+
+            },
+            fn(){
+                 alert('登录成功')
+            }
+        },
+        created(){
+            // console.log(this.fn='123')
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

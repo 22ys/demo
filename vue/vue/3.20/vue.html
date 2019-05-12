@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../Vue.js"></script>
+    <style>
+        #app{
+            width: 200px;
+
+            margin: 0 auto;
+        }
+        #bg{
+            width: 400px;
+            height: 500px;
+            background: url("kb.jpg") center no-repeat;
+            background-size: 100% 100%;
+        }
+        #jdt{
+            width: 400px;
+            height: 20px;
+            border: 2px solid #000;
+        }
+        #jdt div{
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+        #bg.aa{
+            background: url("mj.jpg") center no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="app">
+
+    <div id="bg" :class="{aa:end}">
+
+    </div>
+ <div id="jdt">
+     <div :style="{width:w+'%'}"></div>
+ </div>
+<div id="an">
+    <button @click="kb" v-show="!end">乔丹</button>
+    <button @click="mj">科比</button>
+</div>
+
+
+</div>
+
+<script>
+    new Vue({
+       el:"#app",
+        data: {
+           w:100,
+           end:false,
+        },
+       methods:{
+          kb(){
+             this.w-=10;
+             if(this.w<=0){
+                 this.end=true
+             }
+          },
+           mj(){
+              this.w=100;
+               this.end=false
+       }
+
+
+                }
+
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style:none;
+            padding:5px 10px;
+        }
+      li:nth-child(-n+3) span{
+            background: deeppink;
+        }
+        .content{
+            width: 300px;
+            height: 470px;
+            margin: 50px auto;
+            border: solid 2px #000;
+        }
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            line-height: 20px;
+            text-align:center;
+            margin-right: 10px;
+        }
+        .a{
+            padding-top: 5px;
+            overflow: hidden;
+            display: none;
+
+        }
+        img{
+            width: 80px;
+            height: 120px;
+            float: left;
+
+        }
+        p{
+            width: 180px;
+            height: 120px;
+            float: right;
+            font-size: 14px;
+        }
+     h1{
+       width: 100%;
+       height: 40px;
+       font-size: 23px;
+       color: deeppink;
+       line-height: 40px;
+         margin-left: 10px;
+
+     }
+        .b .a{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h1>电影排行榜</h1>
+    <ul>
+        <li >
+            <span>1</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+        </li>
+        <li >
+            <span>2</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+
+        </li>
+        <li>
+            <span>3</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+
+        </li>
+        <li>
+            <span>4</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+
+        </li>
+        <li>
+            <span>5</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+
+        </li>
+        <li>
+            <span>6</span>电影名
+            <div class="a">
+                <img src="sbg1.jpg"/>
+                <p>121212121321313131313
+                    13213213213211321
+                    231465465465465446546
+                    12121
+                    2121212
+                    545
+                    4646544
+                    464464</p>
+            </div>
+
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    $('li').hover(function () {
+     $(this).addClass('b');
+    },function () {
+        $(this).removeClass('b');
+    }
+    )
+
+</script>
+</html>

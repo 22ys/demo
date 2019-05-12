@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <abc v-bind:fu="msg"></abc>
+</div>
+<templatesr id="abc">
+    <div>
+        {{users}}
+        <input type="text" required>
+        <button type="button" @click="fn">修改</button>
+    </div>
+</templatesr>
+
+<script type="text/x-template" id="aaa">
+    <div>
+        {{users}} {{fu}}
+        <button type="button" @click="fn">修改</button>
+    </div>
+</script>
+
+<script>
+    new Vue({
+        // el:"#app",
+        data: {
+            msg: '1111'
+        },
+        components: {
+            abc: {
+                props:{
+                    fu:String
+                },
+                data() {
+                    return {
+                        users: "123我是局部"
+                    }
+                },
+                methods: {
+                    fn() {
+                        this.users = 'abc'
+                    }
+                },
+                template: '#aaa'
+
+            }
+        }
+    }).$mount("#app")
+</script>
+</body>
+
+</html>
